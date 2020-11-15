@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socket Server</title>
+    <title>SocketServer</title>
 </head>
 <body>
-    <h1>Acceso Denegado</h1>
+    <h1>Acceso denegado</h1>
 
     <script src="socket.io/socket.io.js"></script>
+
     <script>
-        var socket=io();
+        var socket = io();
 
-        socket.on('connect',function (){
-            console.log('Conectado al servidor');
+        socket.on('connect', function() {
+            console.log('Conectado al servidor')
         });
 
-        socket.on('disconnect',function (){
-            console.log('Servidor Desconectado');
+        socket.on('disconnect', function() {
+            console.log('Perdimos comunicación con el servidor');
         });
 
-        socket.emit('mensaje',{nombre:'Gabriel'});
 
-        socket.on('mensaje', (payload)=>{
+        // socket.emit('mensaje', { nombre: 'Fernando' } );
 
-            console.log('Server:',payload);
-
+        socket.on('nuevo-mensaje', function( payload ){
+            console.log('Escuhando:', payload );
         });
+
+        socket.on('active-bands', function( bands ){
+            console.clear();
+            console.table( bands );
+        });
+
+
+
 
     </script>
+
 </body>
 </html>
