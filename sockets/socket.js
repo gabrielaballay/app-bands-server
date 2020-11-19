@@ -43,4 +43,11 @@ io.on('connection', client => {
         io.emit('active-bands', bands.getBands() );
     });
 
+    // client.on('emitir-mensaje', ( payload ) => {
+    //     // console.log(payload);
+    //     // io.emit('nuevo-mensaje', payload ); // emite a todos!
+    //     client.broadcast.emit('nuevo-mensaje', payload ); // emite a todos menos el que lo emitió
+    // })
+
+
 });
