@@ -1,11 +1,12 @@
 {
-  "name": "01-band_name_server",
+  "name": "01-band-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",

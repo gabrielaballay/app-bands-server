@@ -21,7 +21,6 @@ class Bands {
     }
 
     voteBand( id = '' ) {
-
         this.bands = this.bands.map( band => {
 
             if ( band.id === id ) {
@@ -32,9 +31,7 @@ class Bands {
             }
 
         });
-
     }
-
 }
 
 
